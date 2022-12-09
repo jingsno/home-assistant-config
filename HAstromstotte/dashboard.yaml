@@ -1,0 +1,45 @@
+# Vis Estimert strømpris
+type: entity
+entity: sensor.forecast_monthly_electricity_compensation_mean
+name: Estimert strømpris
+attribute: mean_price
+icon: mdi:cash-minus
+unit: NOK/kWh
+
+# Vis Estimert strømstøtte
+type: entity
+entity: sensor.forecast_monthly_electricity_compensation_median
+name: Estimert strømstøtte
+
+# Vis estimater
+# Krever https://github.com/benct/lovelace-multiple-entity-row
+type: entities
+entities:
+  - type: 'custom:multiple-entity-row'
+    entity: sensor.forecast_monthly_electricity_compensation_mean
+    name: Estimert strømpris (NOK/kWh)   
+    attribute: mean_price
+    #unit: NOK/kWh
+    show_state: true
+    state_header: mean
+    icon: mdi:cash-minus
+    entities:
+      - entity: sensor.forecast_monthly_electricity_compensation_quantile_0_025
+        name: 2.5%
+        attribute: mean_price
+      - entity: sensor.forecast_monthly_electricity_compensation_quantile_0_975
+        name: 97.5%
+        attribute: mean_price
+  - type: 'custom:multiple-entity-row'
+    entity: sensor.forecast_monthly_electricity_compensation_mean
+    name: Estimert strømstøtte (NOK/kWh)
+    unit: ' '
+    show_state: true
+    state_header: mean
+    entities:
+      - entity: sensor.forecast_monthly_electricity_compensation_quantile_0_025
+        name: 2.5%
+        unit: ' '
+      - entity: sensor.forecast_monthly_electricity_compensation_quantile_0_975
+        name: 97.5%
+        unit: ' '
