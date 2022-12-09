@@ -6,10 +6,19 @@ attribute: mean_price
 icon: mdi:cash-minus
 unit: NOK/kWh
 
+
 # Vis Estimert strømstøtte
 type: entity
 entity: sensor.forecast_monthly_electricity_compensation_median
 name: Estimert strømstøtte
+
+
+# Vis Estimert pris pr kWh akkurat nå
+type: entity
+entity: sensor.forecast_monthly_electricity_compensation_pricenow
+name: Estimert kostnad pr kWh akkurat nå
+icon: mdi:cash
+
 
 # Vis estimater
 # Krever https://github.com/benct/lovelace-multiple-entity-row
