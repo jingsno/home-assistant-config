@@ -17,7 +17,8 @@ type: entities
 entities:
   - type: 'custom:multiple-entity-row'
     entity: sensor.forecast_monthly_electricity_compensation_mean
-    name: Estimert strømpris (NOK/kWh)   
+    name: Estimert strømpris (NOK/kWh)
+    secondary_info: inkl mva, eksl. nettleie
     attribute: mean_price
     #unit: NOK/kWh
     show_state: true
@@ -33,6 +34,7 @@ entities:
   - type: 'custom:multiple-entity-row'
     entity: sensor.forecast_monthly_electricity_compensation_mean
     name: Estimert strømstøtte (NOK/kWh)
+    secondary_info: inkl mva, eksl. nettleie
     unit: ' '
     show_state: true
     state_header: mean
