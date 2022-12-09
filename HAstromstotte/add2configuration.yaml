@@ -1,2 +1,12 @@
+template:
+# Current Estimated Electricity Price
+  - sensor:
+    - name: forecast_monthly_electricity_compensation_pricenow
+      unit_of_measurement: NOK/kWh
+      state: >
+        {{ (states('sensor.electricity_price_minadresse') | float) - (states('sensor.forecast_monthly_electricity_compensation_mean') | float)}}
+
+
+
 # Includes
 rest: !include rest.yaml
