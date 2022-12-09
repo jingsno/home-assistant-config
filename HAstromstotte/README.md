@@ -4,4 +4,4 @@ Disse er oppgitt i yaml filen.
 
 Data hentes fra https://github.com/martinju/stromstotte/
 
-(Dashboard.jpg)
+![Dashboard](Dashboard.jpg)
