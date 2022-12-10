@@ -30,6 +30,19 @@
           - computation_month
         value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'median') | map(attribute='compensation') | first | round (2) }}"
         unit_of_measurement: "NOK/kWh"
+      - name: forecast_monthly_electricity_compensation_quantile_0.005
+        icon: mdi:cash-plus
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'quantile_0.005')]"
+        json_attributes:
+          - area
+          - mean_price
+          - compensation
+          - type
+          - estimation_date
+          - computation_year
+          - computation_month
+        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.005') | map(attribute='compensation') | first | round (2) }}"
+        unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.025
         icon: mdi:cash-plus
         json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'quantile_0.025')]"
