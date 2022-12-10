@@ -15,7 +15,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'mean') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'mean') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_median
         icon: mdi:cash-refund
@@ -28,7 +28,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'median') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'median') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.005
         icon: mdi:cash-refund
@@ -41,7 +41,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.005') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.005') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.025
         icon: mdi:cash-refund
@@ -54,7 +54,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.025') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.025') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.05
         icon: mdi:cash-refund
@@ -67,7 +67,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.05') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.05') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.1
         icon: mdi:cash-refund
@@ -80,7 +80,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.1') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.1') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.25
         icon: mdi:cash-refund
@@ -93,7 +93,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.25') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.25') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.75
         icon: mdi:cash-refund
@@ -106,7 +106,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.75') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.75') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.9
         icon: mdi:cash-refund
@@ -119,7 +119,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.9') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.9') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.95
         icon: mdi:cash-refund
@@ -132,7 +132,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.95') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.95') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.975
         icon: mdi:cash-refund
@@ -145,7 +145,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.975') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.975') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.995
         icon: mdi:cash-refund
@@ -158,7 +158,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.995') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.995') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
 
       - name: forecast_monthly_electricity_compensation_lower_bound
@@ -172,7 +172,7 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'lower_bound') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'lower_bound') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_current_mean
         icon: mdi:cash-refund
@@ -185,5 +185,5 @@
           - estimation_date
           - computation_year
           - computation_month
-        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'current_mean') | map(attribute='compensation') | first | round (2) }}"
+        value_template: "{{ '{:.2f}'.format(value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'current_mean') | map(attribute='compensation') | first | round (2)) }}"
         unit_of_measurement: "NOK/kWh"
