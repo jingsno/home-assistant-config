@@ -6,8 +6,7 @@
     sensor:
       - name: forecast_monthly_electricity_compensation_mean
         icon: mdi:cash-plus
-        # NO1=$[1], NO2=$[16], NO3=$[31], NO41=$[46], NO5=$[61]
-        json_attributes_path: "$[61]"
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'mean')]"
         json_attributes:
           - area
           - mean_price
@@ -20,8 +19,7 @@
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_median
         icon: mdi:cash-plus
-        # NO1=$[2], NO2=$[17], NO3=$[32], NO41=$[47], NO5=$[62]
-        json_attributes_path: "$[62]"
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'median')]"
         json_attributes:
           - area
           - mean_price
@@ -34,8 +32,7 @@
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.025
         icon: mdi:cash-plus
-        # NO1=$[4], NO2=$[19], NO3=$[34], NO41=$[49], NO5=$[64]
-        json_attributes_path: "$[64]"
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'quantile_0.025')]"
         json_attributes:
           - area
           - mean_price
@@ -46,10 +43,87 @@
           - computation_month
         value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.025') | map(attribute='compensation') | first | round (2) }}"
         unit_of_measurement: "NOK/kWh"
+      - name: forecast_monthly_electricity_compensation_quantile_0.05
+        icon: mdi:cash-plus
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'quantile_0.05')]"
+        json_attributes:
+          - area
+          - mean_price
+          - compensation
+          - type
+          - estimation_date
+          - computation_year
+          - computation_month
+        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.05') | map(attribute='compensation') | first | round (2) }}"
+        unit_of_measurement: "NOK/kWh"
+      - name: forecast_monthly_electricity_compensation_quantile_0.1
+        icon: mdi:cash-plus
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'quantile_0.1')]"
+        json_attributes:
+          - area
+          - mean_price
+          - compensation
+          - type
+          - estimation_date
+          - computation_year
+          - computation_month
+        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.1') | map(attribute='compensation') | first | round (2) }}"
+        unit_of_measurement: "NOK/kWh"
+      - name: forecast_monthly_electricity_compensation_quantile_0.25
+        icon: mdi:cash-plus
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'quantile_0.25')]"
+        json_attributes:
+          - area
+          - mean_price
+          - compensation
+          - type
+          - estimation_date
+          - computation_year
+          - computation_month
+        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.25') | map(attribute='compensation') | first | round (2) }}"
+        unit_of_measurement: "NOK/kWh"
+      - name: forecast_monthly_electricity_compensation_quantile_0.75
+        icon: mdi:cash-plus
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'quantile_0.75')]"
+        json_attributes:
+          - area
+          - mean_price
+          - compensation
+          - type
+          - estimation_date
+          - computation_year
+          - computation_month
+        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.75') | map(attribute='compensation') | first | round (2) }}"
+        unit_of_measurement: "NOK/kWh"
+      - name: forecast_monthly_electricity_compensation_quantile_0.9
+        icon: mdi:cash-plus
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'quantile_0.9')]"
+        json_attributes:
+          - area
+          - mean_price
+          - compensation
+          - type
+          - estimation_date
+          - computation_year
+          - computation_month
+        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.9') | map(attribute='compensation') | first | round (2) }}"
+        unit_of_measurement: "NOK/kWh"
+      - name: forecast_monthly_electricity_compensation_quantile_0.95
+        icon: mdi:cash-plus
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'quantile_0.95')]"
+        json_attributes:
+          - area
+          - mean_price
+          - compensation
+          - type
+          - estimation_date
+          - computation_year
+          - computation_month
+        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.95') | map(attribute='compensation') | first | round (2) }}"
+        unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_quantile_0.975
         icon: mdi:cash-plus
-        # NO1=$[11], NO2=$[26], NO3=$[41], NO41=$[56], NO5=$[71]
-        json_attributes_path: "$[71]"
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'quantile_0.975')]"
         json_attributes:
           - area
           - mean_price
@@ -60,10 +134,23 @@
           - computation_month
         value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.975') | map(attribute='compensation') | first | round (2) }}"
         unit_of_measurement: "NOK/kWh"
+      - name: forecast_monthly_electricity_compensation_quantile_0.995
+        icon: mdi:cash-plus
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'quantile_0.995')]"
+        json_attributes:
+          - area
+          - mean_price
+          - compensation
+          - type
+          - estimation_date
+          - computation_year
+          - computation_month
+        value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'quantile_0.995') | map(attribute='compensation') | first | round (2) }}"
+        unit_of_measurement: "NOK/kWh"
+
       - name: forecast_monthly_electricity_compensation_lower_bound
         icon: mdi:cash-plus
-        # NO1=$[13], NO2=$[28], NO3=$[43], NO41=$[58], NO5=$[73]
-        json_attributes_path: "$[73]"
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'lower_bound')]"
         json_attributes:
           - area
           - mean_price
@@ -76,8 +163,7 @@
         unit_of_measurement: "NOK/kWh"
       - name: forecast_monthly_electricity_compensation_current_mean
         icon: mdi:cash-plus
-        # NO1=$[14], NO2=$[29], NO3=$[44], NO41=$[59], NO5=$[74]
-        json_attributes_path: "$[74]"
+        json_attributes_path: "$[?(@.area == 'NO5' && @.type == 'current_mean')]"
         json_attributes:
           - area
           - mean_price
@@ -88,5 +174,3 @@
           - computation_month
         value_template: "{{ value_json | selectattr('area', 'match', 'NO5') | selectattr('type', 'match', 'current_mean') | map(attribute='compensation') | first | round (2) }}"
         unit_of_measurement: "NOK/kWh"
-
-
