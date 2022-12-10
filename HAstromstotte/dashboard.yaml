@@ -1,23 +1,22 @@
-# Vis Estimert strømpris
+# Vis estimert gjennomsnittelig strømpris for måneden
 type: entity
 entity: sensor.forecast_monthly_electricity_compensation_mean
-name: Estimert strømpris
+name: Estimert gjennomsnittelig strømpris for måneden
 attribute: mean_price
 icon: mdi:cash-minus
 unit: NOK/kWh
 
 
-# Vis Estimert strømstøtte
+# Vis estimert strømstøtte for måneden
 type: entity
 entity: sensor.forecast_monthly_electricity_compensation_median
-name: Estimert strømstøtte
+name: Estimert strømstøtte for måneden
 
 
 # Vis Estimert pris pr kWh akkurat nå
 type: entity
 entity: sensor.forecast_monthly_electricity_compensation_pricenow
 name: Estimert kostnad pr kWh akkurat nå
-icon: mdi:cash
 
 
 # Vis estimater
