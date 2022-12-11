@@ -4,12 +4,12 @@ template:
     - name: forecast_monthly_electricity_compensation_pricenow
       unit_of_measurement: NOK/kWh
       state: >
-        {{ '{:.2f}'.format(((states('sensor.electricity_price_haukedalsveien_46') | float) - (states('sensor.forecast_monthly_electricity_compensation_mean') | float)) | round(2)) }}
+        {{ '{:.2f}'.format(((states('sensor.electricity_price_minadresse') | float) - (states('sensor.forecast_monthly_electricity_compensation_mean') | float)) | round(2)) }}
       attributes:
         price: >
-          {{ ((states('sensor.electricity_price_haukedalsveien_46') | float) - (states('sensor.forecast_monthly_electricity_compensation_mean') | float)) | round(3) }}
+          {{ ((states('sensor.electricity_price_minadresse') | float) - (states('sensor.forecast_monthly_electricity_compensation_mean') | float)) | round(3) }}
       icon: >
-          {% if (states('sensor.electricity_price_haukedalsveien_46') | float) - (states('sensor.forecast_monthly_electricity_compensation_mean') | float) > 0 %}
+          {% if (states('sensor.electricity_price_minadresse') | float) - (states('sensor.forecast_monthly_electricity_compensation_mean') | float) > 0 %}
             mdi:cash-minus
           {% else %}
             mdi:cash-plus
